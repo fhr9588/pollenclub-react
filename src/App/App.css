@@ -10,3 +10,24 @@
   font-size: 0.33rem;
   line-height: 0.36rem;
 }
+.nav{
+  width: 7.48rem;
+}
+.nav a{
+  float: left;
+  width: 1.87rem;
+  height: .9rem;
+  line-height: 1rem;
+  text-align: center;
+  border-bottom: 0.05rem solid #eaeaea;
+  color:black;
+  font-size: 0.28rem;
+
+}
+.nav a:active{
+  text-decoration: none;
+}
+.nav a.active{
+  color: #1890ff;
+  border-bottom:0.05rem solid #1890ff ;
+}
