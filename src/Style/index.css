@@ -37,3 +37,8 @@ abbr,acronym{border:0;}
 .zoom{zoom:1}
 .hidden{visibility:hidden;}
 .none{display:none;}
+
+/*更改ant自定义css*/
+.ant-list-item{padding:0!important;}
+.ant-list{font-family:Droid Sans,Droid Sans Fallback,STHeiti,SimHei,Hei !important;}
+.ant-list-vertical .ant-list-item-content{margin: 0!important;}
