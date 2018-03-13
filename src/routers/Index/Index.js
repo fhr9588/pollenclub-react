@@ -12,6 +12,7 @@ class Index extends Component{
         super(prop);
         this.state = {
             data:[],
+            banner:[],
             loading: false,
             hasMore: true
         }
@@ -19,43 +20,51 @@ class Index extends Component{
 
         //把跨域封装成一个方法,现在是访问本地json文件,需要注意的就是要用callback
     getData = (callback) => {
-        axios.get('aa.json')
+        axios.get('indexList.json')
             .then((res)=>{
                 callback(res.data);
             })
             .catch((error)=>{
                 console.log(error);
             })
-    }
-
-    componentDidMount(){
-        //对轮播图swiper进行配置
-        var mySwiper1=new Swiper ('#swiper', {
-            direction: 'horizontal',
-            loop: true,
-
-            //自动切换
-            autoplay:true,
-
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
-                bulletElement : 'div',                   //设置分页器小点的元素
-                bulletClass:'swiper-page',              //设置分页器小点的类名
-                bulletActiveClass:'swiper-page-active' //设置分页器小点在激活时的类名
-            }
-        });
-
-    }
+    };
 
     //在组件出现前,DOM还没有渲染到文档里时的生命周期函数
     componentWillMount() {
+        //轮播图动态获取的接口,需要注意的就是在修改完数据以后在去执行swiper以及列表跨域的方法
+        axios.get('indexBanner.json')
+            .then((res)=>{
+                this.setState({banner:res.data[0].images},()=>{
+                    //对轮播图swiper进行配置
+                    var mySwiper1=new Swiper ('#swiper', {
+                        direction: 'horizontal',
+                        loop: true,
+
+                        //自动切换
+                        autoplay:true,
+
+                        // 如果需要分页器
+                        pagination: {
+                            el: '.swiper-pagination',
+                            bulletElement : 'div',                   //设置分页器小点的元素
+                            bulletClass:'swiper-page',              //设置分页器小点的类名
+                            bulletActiveClass:'swiper-page-active' //设置分页器小点在激活时的类名
+                        }
+                    });
+                })
+            })
         this.getData((res) => {
             this.setState({
                 data: res.results
             });
         });
     }
+
+    componentDidMount(){
+
+    }
+
+
 
     handleInfiniteOnLoad = () => {
         //用来判断是否还有数据加载,没有数据进行用户提示.
@@ -89,12 +98,12 @@ class Index extends Component{
         <div className="indexPage">
                 <div className="swiper-container" id="swiper">
                     <div className="swiper-wrapper">
-                        <div className="swiper-slide"><img src="http://clubimg.dbankcdn.com/data/attachment/portal/201802/26/100655atydzaqqcccirh7f.jpg" /></div>
-                        <div className="swiper-slide"><img src="http://clubimg.dbankcdn.com/data/attachment/portal/201802/25/154018agaqkk8chts7doku.jpg" /></div>
-                        <div className="swiper-slide"><img src="http://clubimg.dbankcdn.com/data/attachment/portal/201802/27/153124j6xypzy5nm3j3icu.jpg" /></div>
-                        <div className="swiper-slide"><img src="http://clubimg.dbankcdn.com/data/attachment/portal/201802/15/0911138ieuwjskjjox7mtp.jpg" /></div>
-                        <div className="swiper-slide"><img src="http://clubimg.dbankcdn.com/data/attachment/portal/201802/17/080845ibrb3f0svo699van.jpg"/></div>
-                        <div className="swiper-slide"><img src="http://clubimg.dbankcdn.com/data/attachment/portal/201802/22/192734p335gvddujn6m50z.jpg"/></div>
+                        {this.state.banner.map((item)=>{
+
+                            return(
+                                <div key={item.substring(61,83)} className="swiper-slide"><img src={item} /></div>
+                            )
+                        })}
                     </div>
                     {/*分页器*/}
                     <div className="swiper-pagination"></div>

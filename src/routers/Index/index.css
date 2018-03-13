@@ -118,11 +118,6 @@
     width: 100%;
 }
 
-
-
-
-
-
 /***************列表的底部信息***************/
 .index-list .index-list-item .index-list-item-footer{
     width: 100%;
@@ -171,14 +166,6 @@
 .index-list-item-footer .footer-right .footer-time{
     padding-right: 0.144rem;
 }
-
-
-
-
-
-
-
-
 .demo-loading {
     position: absolute!important;
     bottom: -40px;
