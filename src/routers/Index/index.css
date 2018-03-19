@@ -171,3 +171,15 @@
     bottom: -40px;
     left: 50%;
 }
+
+
+.indexPage .ant-back-top {
+    bottom: 0.288rem;
+    right: 0.216rem;
+}
+.indexPage .ant-back-top-inner {
+    width: 0.68rem;
+    height: 0.68rem;
+    background: url(http://clubstyle.dbankcdn.com/template/hw_fans/touch/common/style/images/btn_top_normal.png) no-repeat;
+    background-size: contain;
+}

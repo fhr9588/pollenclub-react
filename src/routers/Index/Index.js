@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import {BrowserRouter as Router, Route,Link,Switch} from 'react-router-dom';
-import { List, message, Avatar, Spin } from 'antd';
+import { List, message, Avatar, Spin, BackTop } from 'antd';
 import reqwest from 'reqwest';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -14,7 +14,8 @@ class Index extends Component{
             data:[],
             banner:[],
             loading: false,
-            hasMore: true
+            hasMore: true,
+            jump:true
         }
     }
 
@@ -92,10 +93,30 @@ class Index extends Component{
             });
         });
     };
+    aaa=(e)=>{
+        //this.setState({jump:false},()=>{
+        //    console.log(e.target.dataset);
+        //})
+        console.log(e.target.dataset);
+        //window.location.href='http://www.baidu.com'
+        //this.handle=(e)=>{
+        //    e.preventDefault();
+        //    console.log('点击了')
+        //}
+        //this.props.history.push('/fff')
+    }
+
+
+
+
+
 
     render(){
         return(
         <div className="indexPage">
+            <BackTop>
+                <div className="ant-back-top-inner"></div>
+            </BackTop>
                 <div className="swiper-container" id="swiper">
                     <div className="swiper-wrapper">
                         {this.state.banner.map((item)=>{
@@ -130,15 +151,16 @@ class Index extends Component{
 
                 {item.type=='onePhotos' ?
                  <div className="index-list-item">
+                    <Link to="/app">
                     <div className="article-title">{item.title}</div>
                     <div className="oneGroup">
                         <img src={item.images[0]} alt=""/>
                     </div>
                     <div className="index-list-item-footer clearfix">
                     <div className="footer-left fl">
-                        <Link to="/" className="fl" style={{marginTop:'0.036rem'}}>
+                        <div className="fl" style={{marginTop:'0.036rem'}}>
                             <img src={item.portrait} alt=""/>
-                        </Link>
+                        </div>
                         <span className="userName fl">{item.userName}</span>
                         </div>
                         <div className="footer-right fr">
@@ -147,10 +169,12 @@ class Index extends Component{
                            <span className="footer-time fr">{item.time}</span>
                         </div>
                     </div>
+                    </Link>
                 </div>
                 :
                 (item.type=='twoPhotos'?
                     <div className="index-list-item">
+                        <Link to="/app">
                         <div className="article-title">{item.title}</div>
                         <div className="twoGroup clearfix">
                             <img className="fl" src={item.images[0]} alt=""/>
@@ -158,9 +182,9 @@ class Index extends Component{
                         </div>
                     <div className="index-list-item-footer clearfix">
                     <div className="footer-left fl">
-                        <Link to="/" className="fl">
+                        <div className="fl">
                             <img src={item.portrait} alt=""/>
-                        </Link>
+                        </div>
                         <span className="userName fl">{item.userName}</span>
                         </div>
                         <div className="footer-right fr">
@@ -169,10 +193,12 @@ class Index extends Component{
                            <span className="footer-time fr">{item.time}</span>
                         </div>
                     </div>
+                    </Link>
                     </div>
                     :
                     (item.type=='threePhotos' ?
                         <div className="index-list-item">
+                        <Link to="/app">
                             <div className="article-title">{item.title}</div>
                             <div className="threeGroup clearfix">
                                 <img className="fl"  src={item.images[0]} alt=""/>
@@ -181,9 +207,9 @@ class Index extends Component{
                             </div>
                     <div className="index-list-item-footer clearfix">
                     <div className="footer-left fl">
-                        <Link to="/" className="fl">
+                        <div className="fl">
                             <img src={item.portrait} alt=""/>
-                        </Link>
+                        </div>
                         <span className="userName fl">{item.userName}</span>
                         </div>
                         <div className="footer-right fr">
@@ -192,17 +218,19 @@ class Index extends Component{
                            <span className="footer-time fr">{item.time}</span>
                         </div>
                     </div>
+                    </Link>
                         </div>
                          :
                     (item.type=='noPhotos' ?
                          <div className="index-list-item">
+                         <Link to="/app">
                             <div className="article-title">{item.title}</div>
                             <div className="noGroup" >{item.textTitle}</div>
                     <div className="index-list-item-footer clearfix">
                     <div className="footer-left fl">
-                        <Link to="/" className="fl">
+                        <div className="fl">
                             <img src={item.portrait} alt=""/>
-                        </Link>
+                        </div>
                         <span className="userName fl">{item.userName}</span>
                         </div>
                         <div className="footer-right fr">
@@ -211,16 +239,18 @@ class Index extends Component{
                            <span className="footer-time fr">{item.time}</span>
                         </div>
                     </div>
+                    </Link>
                         </div>
                         :
-                        <div className="index-list-item clearfix">
+                        <div className="index-list-item">
+                        <Link to="/" className="clearfix">
                         <div className="content-left fl">
                             <div className="article-title">{item.title}</div>
                             <div className="index-list-item-footer clearfix">
                                 <div className="footer-left fl">
-                                    <Link to="/" className="fl">
-                                        <img src={item.portrait} alt=""/>
-                                    </Link>
+                                    <div className="fl">
+                                        <img onClick={this.aaa} data-num="111" src={item.portrait} alt=""/>
+                                    </div>
                                     <span className="userName fl">{item.userName}</span>
                                     </div>
                                 <div className="footer-right fr">
@@ -235,6 +265,7 @@ class Index extends Component{
                                 <img src={item.images} alt=""/>
                             </div>
                         </div>
+                        </Link>
                         </div>
 
                     )
