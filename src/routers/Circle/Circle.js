@@ -9,6 +9,7 @@ class Circle extends Component{
         super(prop);
         this.state={
             data:[],
+            slidedata:[],
             title:'圈圈-花粉兴趣圈-华为花粉俱乐部',
             loading: false,
             hasMore: true,
@@ -27,12 +28,26 @@ class Circle extends Component{
     };
 
 
+    //在组件出现前,DOM还没有渲染到文档里时的生命周期函数
     componentWillMount(){
+        axios.get('http://localhost:3000/circleSlide.json')
+        .then((res)=>{
+            this.setState({slidedata:res.data.results},()=>{
+                console.log(this.state.slidedata);
+            })
+        });
+
+
+
         this.getData((res) => {
             this.setState({
                 data: res.results
             });
         });
+
+
+
+
     }
 
 
@@ -98,90 +113,17 @@ class Circle extends Component{
                 <div className="hotCircle">热门圈子</div>
                 <div className="slideClassification">
                     <div className="slideClassification-shade">
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                            <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
-                        <Link className="slideClassification-item" to="/">
-                            <div className="slideClassification-item-img">
-                                <img src="http://clubimg.dbankcdn.com/data/attachment/group/47/group_1006_icon.png" alt=""/>
-                            </div>
-                            <div className="slideClassification-item-name">极客大本营</div>
-                            <div className="slideClassification-item-num">88880人</div>
-                        </Link>
+                        {this.state.slidedata.map((item,index)=>{
+                            return(
+                                <Link key={index} className="slideClassification-item" to="/">
+                                <div className="slideClassification-item-img">
+                                <img src={item.image} alt=""/>
+                                </div>
+                                <div className="slideClassification-item-name">{item.name}</div>
+                                <div className="slideClassification-item-num">{item.num}</div>
+                            </Link>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="line"></div>
