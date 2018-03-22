@@ -13,6 +13,7 @@ class Index extends Component{
         this.state = {
             data:[],
             banner:[],
+            title:'花粉俱乐部-华为手机|荣耀手机官方论坛',
             loading: false,
             hasMore: true,
             jump:true
@@ -62,7 +63,8 @@ class Index extends Component{
     }
 
     componentDidMount(){
-
+        //动态修改网页title
+        document.title=this.state.title;
     }
 
 
@@ -278,7 +280,7 @@ class Index extends Component{
 
             )}
                     >
-                        {this.state.loading && this.state.hasMore && <Spin className="demo-loading" />}
+                        {this.state.loading && this.state.hasMore && <Spin tip="加载中" className="demo-loading" />}
                     </List>
                 </InfiniteScroll>
             </div>

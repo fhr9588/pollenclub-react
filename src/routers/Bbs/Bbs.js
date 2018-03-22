@@ -11,6 +11,7 @@ class Bbs extends Component{
         this.state={
             index:0,
             data:[],
+            title:'华为手机|荣耀手机所有产品板块页面 花粉俱乐部',
             honour:[],
             huawei:[],
             flat:[],
@@ -43,23 +44,23 @@ class Bbs extends Component{
                     emui:data.data.results[8],
                     pollen:data.data.results[9]
 
-                },()=>{
-                    console.log(this.state.honour)
                 }
                 )
-            })
+            });
 
             //this.setState({index:2,aaa:2})
 
     }
 
-    handleInfiniteOnLoad = () => {
+    componentDidMount(){
+        //动态修改网页title
+        document.title=this.state.title;
+    }
 
-    };
-    honourClick=(e)=> {
-        console.log(e);
-        if (this.state.index != e) {
-            this.setState({index: e})
+    honourClick=(index)=> {
+        console.log(index);
+        if (this.state.index != index) {
+            this.setState({index: index});
 
             //if(this.state.index==-1){
             //    this.setState({index:1},()=>{
@@ -73,10 +74,7 @@ class Bbs extends Component{
         }else{
             this.setState({index:-1})
         }
-    }
-    aaaaa=()=>{
-        this.setState({index:0})
-    }
+    };
 
     render() {
         let a=this.state.index;
@@ -95,7 +93,7 @@ class Bbs extends Component{
                     </div>
                 </div>
                 <div className="bbsPage-main">
-                    <div className="allPlate" onClick={this.aaaaa}>全部板块</div>
+                    <div className="allPlate">全部板块</div>
                     <div className="plateCategory">
                         <div className="container">
                             <ul>

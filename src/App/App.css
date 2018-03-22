@@ -52,3 +52,39 @@
 #swiper .swiper-pagination .swiper-page-active{
   opacity: 1;
 }
+.react-footer{
+  padding: 0.18rem 0;
+}
+.react-footer .color{
+  color: #aeaeae;
+}
+.react-footer p{
+  text-align: center;
+  color: #aeaeae;
+}
+.react-footer .userState{
+  margin-bottom: 0.09rem;
+}
+.react-footer a{
+  color: #666;
+  font-size: 0.18rem;
+  padding: 0 0.19rem;
+  border-right: 0.01rem solid #666;
+}
+.react-footer .userState a:last-child{
+  border-right: none;
+}
+.react-footer .userVersion{
+  margin-bottom: 0.09rem;
+}
+.react-footer .userVersion a{
+  border-right: 0.01rem solid #aeaeae;
+}
+.react-footer .userVersion a:last-child{
+  border-right: none;
+}
+.react-footer .footerMessage{
+  font-size: 0.14rem;
+}
+
+

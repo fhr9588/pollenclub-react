@@ -1,0 +1,299 @@
+.circle-searchGroup{
+    margin: 0.11rem 0.29rem;
+    position: relative;
+}
+.circle-searchGroup-left{
+    width: 6.33rem;
+}
+.circle-searchGroup .circle-searchGroup-input{
+    width: 100%;
+    height: 0.5rem;
+    font-size: 0.23rem;
+    border-radius: 0.36rem;
+    display: block;
+    padding:0 0.22rem;
+    background: #efefef;
+    border: 0;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    -webkit-text-fill-color: transparent;
+}
+.circle-searchGroup .circle-searchGroup-right{
+    position: absolute;
+    top:0.09rem;
+    right: 0;
+    color:#efefef ;
+}
+.circle-searchGroup .circle-searchGroup-right i{
+    font-size: 0.29rem;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+    -webkit-text-fill-color: transparent;
+}
+.circlePage .circlePage-main .hotCircle{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.18rem 0 0.07rem 0.29rem;
+    background: #f4f4f4;
+    font-size: 0.23rem;
+    color: #000;
+}
+.circlePage-main .slideClassification{
+    padding: 0.29rem 0 0.22rem 0;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.slideClassification  .slideClassification-shade{
+
+}
+.slideClassification .slideClassification-item{
+    display: inline-block;
+    width: 1.35rem;
+    padding: 0 0.072rem;
+    text-align: center;
+    color: #000;
+    box-sizing: border-box;
+}
+.slideClassification .slideClassification-item:first-child{
+    margin-left: 0.29rem;
+}
+.slideClassification .slideClassification-item .slideClassification-item-img{
+    width: 0.72rem;
+    height: 0.72rem;
+    margin: 0 auto;
+}
+.slideClassification .slideClassification-item .slideClassification-item-img img{
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+}
+.slideClassification .slideClassification-item .slideClassification-item-name{
+    font-size: 0.23rem;
+    padding-top: 0.18rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.slideClassification .slideClassification-item .slideClassification-item-num{
+    color: rgba(0,0,0,0.5);
+    font-size: 0.22rem;
+}
+.slideClassification .slideClassification-item:last-child{
+    margin-right: 0.29rem;
+}
+.circlePage-main .line{
+    width: 100%;
+    height: 0.14rem;
+    background: #f4f4f4;
+}
+
+
+
+/***************新闻列表***************/
+.circle-list .circle-list-container{
+    padding: 0 0.29rem;
+}
+.circle-list .circle-list-item{
+    padding: 0.29rem 0;
+}
+.circle-list .circle-list-item .article-title{
+    width: 100%;
+    margin-bottom: 0.11rem;
+    color: #000;
+    font-weight: normal;
+    font-size: 0.27rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp:2;
+}
+.circle-list .circle-list-item .circle-list-item-title{
+    padding-bottom: 0.22rem;
+    color: rgba(0,0,0,0.5);
+}
+.circle-list-item-title .title-portrait{
+    width: 0.58rem;
+    height: 0.58rem;
+    margin-right: 0.144rem;
+}
+.circle-list-item-title .title-portrait img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.circle-list-item-title .circle-list-item-title-msgGroup{
+    padding-top: 0.054rem;
+    font-size: 0.23rem;
+    line-height: 1;
+}
+.circle-list-item-title-msgGroup .uname{
+    color: #000;
+}
+.circle-list-item-title-msgGroup .publishType{
+    font-size: 0.18rem;
+    line-height: 1.4;
+}
+.circle-list-item-title .grade{
+    font-size: 0.18rem;
+    padding-top: 0.054rem;
+    line-height: 1;
+}
+
+/***************状态图标**************/
+.circle-list .circle-list-item .top{
+    display: inline-block;
+    height: 0.22rem;
+    width: 0.32rem;
+    margin-right: 0.14rem;
+    background: url(http://clubstyle.dbankcdn.com/template/hw_fans/touch/common/style/images/ic_top.png) no-repeat center center;
+    background-size:auto 0.22rem;
+}
+ .circle-list .circle-list-item .hot{
+     display: inline-block;
+     height: 0.22rem;
+     width: 0.32rem;
+     background: url(http://clubstyle.dbankcdn.com/template/hw_fans/touch/common/style/images/ic_hot.png) no-repeat center center;
+     background-size:auto 0.22rem;
+     margin-right: 0.14rem;
+ }
+ .circle-list .circle-list-item .essence{
+     display: inline-block;
+     height: 0.22rem;
+     width: 0.5rem;
+     background: url(http://clubstyle.dbankcdn.com/template/hw_fans/touch/common/style/images/ic_tag_essence_normal.png) no-repeat center center;
+     background-size:auto 0.22rem;
+     margin-right: 0.14rem;
+ }
+
+/***************一幅图***************/
+.circle-list .circle-list-item .oneGroup{
+    width: 100%;
+    height: 3.1rem;
+    margin-bottom: 0.29rem;
+}
+.circle-list .circle-list-item .oneGroup img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/***************二幅图***************/
+.circle-list .circle-list-item .twoGroup{
+    width: 100%;
+    height: 1.92rem;
+    margin-bottom: 0.11rem;
+}
+.circle-list .circle-list-item .twoGroup img{
+    display: block;
+    width: 3.42rem;
+    height: 100%;
+}
+
+/***************三幅图***************/
+.circle-list .circle-list-item .threeGroup{
+    width: 100%;
+    height: 1.93rem;
+    margin-bottom: 0.11rem;
+}
+.circle-list .circle-list-item .threeGroup img{
+    display: block;
+    width: 2.27rem;
+    margin-right: 0.036rem;
+    height: 100%;
+}
+.circle-list .circle-list-item .threeGroup :last-child{
+    margin-right: 0;
+}
+
+/***************没有图片***************/
+.circle-list .circle-list-item .noGroup{
+    max-width: 100%;
+    font-size: 0.234rem;
+    color: rgba(0,0,0,0.5);
+    margin:0.036rem 0 0.25rem 0;
+    font-weight: normal;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp: 2;
+}
+
+/***************右侧图片***************/
+.circle-list .circle-list-item .content-left{
+    width: 4.39rem;
+    height: 1.93rem;
+    position: relative;
+}
+.circle-list .circle-list-item .content-left .circle-list-item-footer{
+    position: absolute;
+    bottom:0;
+}
+.content-left .circle-list-item-footer .footer-left .userName{
+    max-width: 1rem;
+}
+
+.circle-list .circle-list-item .photos-right .rightGroup{
+    width: 2.27rem;
+    height: 1.93rem;
+}
+.circle-list .circle-list-item .photos-right .rightGroup img{
+    display: block;
+    width: 100%;
+}
+
+/***************列表的底部信息***************/
+.circle-list .circle-list-item .circle-list-item-footer{
+    width: 100%;
+}
+.circle-list-item-footer .footer-left{
+    line-height: 0.43rem;
+    font-size: 0.18rem;
+    color: rgba(0,0,0,0.3);
+    position: relative;
+}
+.footer-left img{
+    display: block;
+    width: 0.36rem;
+    height: 0.36rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*margin-top: 0.036rem;*/
+}
+.footer-left .userName{
+    padding-left: 0.11rem;
+    max-width: 2.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    top:0.018rem;
+}
+.circle-list-item-footer .footer-right{
+    font-size: 0.18rem;
+    color:rgba(0,0,0,0.3);
+    position: relative;
+    line-height: 0.43rem;
+}
+.circle-list-item-footer .footer-right .footer-see{
+    display: block;
+    width: 0.43rem;
+    height:0.43rem;
+    position: absolute;
+    bottom:0.036rem;
+    right: 0;
+}
+.circle-list-item-footer .footer-right .footer-Num{
+    padding-right: 0.43rem;
+}
+.circle-list-item-footer .footer-right .footer-time{
+    padding-right: 0.144rem;
+}

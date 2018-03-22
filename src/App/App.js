@@ -14,7 +14,19 @@ import './App.css';
 class App extends Component {
     constructor(prop){
         super(prop);
+        let currents = window.location.pathname;
         this.state={index:1};
+        if(currents=='/app/bbs'){
+            this.state.index=2;
+        }
+        if(currents=='/app/circle'){
+            this.state.index=3;
+        }
+
+
+
+
+
     }
 
 
@@ -73,6 +85,19 @@ class App extends Component {
                   <Route path={`${match.url}/circle`} component={Circle} />
                   <Redirect to='/404' />
               </Switch>
+          </div>
+          <div className="react-footer">
+             <p className="userState">
+                 <Link to="/">首页</Link>
+                 <Link to="/">登陆</Link>
+                 <Link to="/">注册</Link>
+             </p>
+              <p className="userVersion">
+                  <Link to="/">客户端</Link>
+                  <Link to="/" className="color">触屏版</Link>
+                  <Link to="/">电脑版</Link>
+              </p>
+              <p className="footerMessage">Copyright © 2011-2018 华为软件技术有限公司 版权所有 保留一切权利</p>
           </div>
           </div>
     );
