@@ -99,12 +99,12 @@ class Circle extends Component{
                 </BackTop>
                 <div className="circle-searchGroup clearfix">
                     <div className="circle-searchGroup-left fl">
-                        <Link to="/">
+                        <Link to="/search/circle">
                             <input className="circle-searchGroup-input" type="text" placeholder="搜索圈子..."/>
                         </Link>
                     </div>
                     <div className="circle-searchGroup-right fr">
-                        <Link to="/">
+                        <Link to="/search/circle">
                             <Icon type="search"  />
                         </Link>
                     </div>

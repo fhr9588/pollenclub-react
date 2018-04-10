@@ -1,0 +1,37 @@
+.searchPage .search-main-title{
+    padding: 0.22rem 0.29rem 0.18rem 0.29rem;
+    font-size: 0.324rem;
+    border-bottom: 0.04rem solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    color: #000;
+}
+.searchPage .bbs-searchGroup{
+    margin: 0.11rem 0.29rem;
+    position: relative;
+}
+/*************论坛搜索***************/
+.bbsSearch .search-label{
+    width: 100%;
+}
+.search-label .search-label-container{
+    padding: 0 0.22rem 0.14rem;
+}
+.search-label .search-label-title{
+    padding-left: 0.072rem;
+    font-size: 0.234rem;
+    color: rgba(0,0,0,0.65);
+    height: 0.63rem;
+    line-height: 0.63rem;
+}
+.search-label .search-label-group{
+    width: 100%;
+}
+.search-label-group .search-label-item{
+    display: inline-block;
+    background: #f4f4f4;
+    color: rgba(0,0,0,0.85);
+    font-size: 0.22rem;
+    padding: 0.14rem 0.22rem;
+    border-radius: 0.36rem;
+    margin: 0 0.14rem 0.22rem 0;
+}

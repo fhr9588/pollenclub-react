@@ -82,12 +82,12 @@ class Bbs extends Component{
             <div className="bbsPage">
                 <div className="bbs-searchGroup clearfix">
                     <div className="bbs-searchGroup-left fl">
-                        <Link to="/">
+                        <Link to="/search/bbs">
                         <input className="bbs-searchGroup-input" type="text" placeholder="搜索帖子..."/>
                         </Link>
                     </div>
                     <div className="bbs-searchGroup-right fr">
-                        <Link to="/">
+                        <Link to="/search/bb">
                             <Icon type="search"  />
                         </Link>
                     </div>

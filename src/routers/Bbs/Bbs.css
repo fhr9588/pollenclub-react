@@ -14,8 +14,15 @@
     padding:0 0.22rem;
     background: #efefef;
     border: 0;
-    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    color: #007dff;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
     -webkit-text-fill-color: transparent;
+    outline: 0;
+}
+.bbs-searchGroup .bbs-searchGroup-input:focus{
+    text-shadow: 0 0 0 #000;
+    border: 0;
+    box-shadow: none;
 }
 .bbs-searchGroup .bbs-searchGroup-right{
     position: absolute;
