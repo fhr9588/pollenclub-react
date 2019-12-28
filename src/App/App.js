@@ -97,7 +97,7 @@ class App extends Component {
                   <Link to="/" className="color">触屏版</Link>
                   <Link to="/">电脑版</Link>
               </p>
-              <p className="footerMessage">Copyright © 2011-2018 华为软件技术有限公司 版权所有 保留一切权利</p>
+              <p className="footerMessage">Copyright © 2011-2019 华为软件技术有限公司 版权所有 保留一切权利</p>
           </div>
           </div>
     );
